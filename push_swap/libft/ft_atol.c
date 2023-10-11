@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 14:38:48 by agheredi          #+#    #+#             */
-/*   Updated: 2023/10/11 14:23:28 by agheredi         ###   ########.fr       */
+/*   Created: 2023/10/11 10:44:38 by agheredi          #+#    #+#             */
+/*   Updated: 2023/10/11 14:51:02 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+long long	ft_atol(const char *str)
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
+	long long	i;
+	long long	nbr;
+	int			flag;
 
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
-	else if (argc == 2)
-		argv = ft_split(argv[1], " ");
-	init_stack(argv, a);
-	//while (stack a no este ordenado)
-	//	algoritmos de ordencion
-	//liberar los stack
-	return (0);
+	i = 0;
+	nbr = 0;
+	flag = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
+		i++;
+	if (str[i] == '-')
+		flag = -1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nbr = (str[i] - '0') + nbr * 10;
+		i++;
+	}
+	if (flag == -1)
+		nbr = nbr * flag;
+	return (nbr);
 }

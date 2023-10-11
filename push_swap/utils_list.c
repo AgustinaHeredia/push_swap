@@ -6,56 +6,56 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:36:22 by agheredi          #+#    #+#             */
-/*   Updated: 2023/10/09 15:17:08 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/10/11 10:23:03 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_stacknew(int nb, int index)
+t_stack_node	*ft_stacknew(int nb, int index)
 {
-	t_stack	*new;
+	t_stack_node	*new;
 
-	new = (t_stack *) malloc(sizeof(t_stack));
+	new = (t_stack_node *) malloc(sizeof(t_stack_node));
 	if (!new)
 		return (NULL);
-	new->nb = nb;
-	new->index = index;
+	new->value = nb;
+	new->current_position = index;
 	new->next = NULL;
 	return (new);
 }
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_stackadd_back(t_stack_node **stack, t_stack_node *new)
 {
-	t_list	*temp;
+	t_stack_node	*temp;
 
-	temp = *lst;
-	if (!*lst)
-		*lst = new;
+	temp = *stack;
+	if (!*stack)
+		*stack = new;
 	else
 	{
-		while (temp -> next)
-			temp = temp-> next;
-		temp -> next = new;
+		while (temp->next)
+			temp = temp->next;
+		temp->next = new;
 	}
 }
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_stackadd_front(t_stack_node **stack, t_stack_node *new)
 {
-	if (lst)
+	if (stack)
 	{
-		new -> next = *lst;
-		*lst = new;
+		new -> next = *stack;
+		*stack = new;
 	}
 	else
-		*lst = new;
+		*stack = new;
 }
 
-t_stack	*ft_lstlast(t_list *lst)
+t_stack_node	*ft_stacklast(t_stack_node *stack)
 {
-	if (!lst)
+	if (!stack)
 		return (NULL);
-	while (lst -> next)
-		lst = lst -> next;
-	return (lst);
+	while (stack -> next)
+		stack = stack -> next;
+	return (stack);
 }
