@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:36:22 by agheredi          #+#    #+#             */
-/*   Updated: 2023/10/11 10:23:03 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:06:38 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_stack_node	*ft_stacknew(int nb, int index)
 	return (new);
 }
 
-void	ft_stackadd_back(t_stack_node **stack, t_stack_node *new)
+/*void	ft_stackadd_back(t_stack_node **stack, t_stack_node *new)
 {
 	t_stack_node	*temp;
 
@@ -59,3 +59,4 @@ t_stack_node	*ft_stacklast(t_stack_node *stack)
 		stack = stack -> next;
 	return (stack);
 }
+*/

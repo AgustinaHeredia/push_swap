@@ -6,7 +6,7 @@
 #    By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/08 10:23:30 by agheredi          #+#    #+#              #
-#    Updated: 2023/10/11 14:52:10 by agheredi         ###   ########.fr        #
+#    Updated: 2023/10/13 12:46:00 by agheredi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,6 @@ SRCS = ft_atoi.c \
 	   ft_substr.c \
 	   ft_tolower.c \
 	   ft_toupper.c \
-	   ft_atol.c \
 
 SRCS_BONUS = ft_lstnew_bonus.c \
 			ft_lstadd_front_bonus.c \

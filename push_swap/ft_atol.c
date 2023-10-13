@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   inicialice.c                                       :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 10:28:41 by agheredi          #+#    #+#             */
-/*   Updated: 2023/10/13 13:30:05 by agheredi         ###   ########.fr       */
+/*   Created: 2023/10/13 12:45:16 by agheredi          #+#    #+#             */
+/*   Updated: 2023/10/13 13:24:05 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// funcion que convierte el argv en numeros, verificando que no son long
-
-void	init_stack(char *argv, t_stack_node a)
+static long	ft_atol(const char *str)
 {
-	long	nbr;
-	int		i;
+	long long	i;
+	long long	nbr;
+	int			flag;
 
-	i = 1;
-	while (argv)
+	i = 0;
+	nbr = 0;
+	flag = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
+		i++;
+	if (str[i] == '-')
+		flag = -1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		nrb = ft_atol(argv[i];)
-		if (nbr > INT_MAX || nbr < INT_MIN)
-			ft_exit(-1);
-
+		nbr = (str[i] - '0') + nbr * 10;
+		i++;
 	}
-	//crear el stack con los argv de argv
-	//verificar que los argumentos son validos
-	//	-o hay valores duplicados
-	//	-no hay vallores por encima o por debajo de int
-	//	-no hay sintaxis erronea
+	if (flag == -1)
+		nbr = nbr * flag;
+	return (nbr);
 }
