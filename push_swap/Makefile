@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+         #
+#    By: agusheredia <agusheredia@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/06 14:39:27 by agheredi          #+#    #+#              #
-#    Updated: 2023/10/13 13:30:36 by agheredi         ###   ########.fr        #
+#    Updated: 2023/10/16 18:35:00 by agusheredia      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,11 +36,11 @@ $(NAME): $(OBJECTS)
 	$(CC) $(FLAGS) $(OBJECTS) $(LIBFT_LIB) -o $(NAME)
 
 clean:
-	make -C $(LIBFT_PATH) clean
+	@ make -C $(LIBFT_PATH) clean
 	rm -f *.o
 
 fclean: clean
-	make -C $(LIBFT_PATH) fclean
+	@ make -C $(LIBFT_PATH) fclean
 	rm -f $(NAME)
 
 re: fclean all

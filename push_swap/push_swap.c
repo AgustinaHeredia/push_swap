@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agusheredia <agusheredia@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:38:48 by agheredi          #+#    #+#             */
-/*   Updated: 2023/10/13 13:13:37 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/10/17 16:37:01 by agusheredia      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,21 @@
 
 int	main(int argc, char **argv)
 {
+	int				flag_argv;
 	t_stack_node	*a;
-	t_stack_node	*b;
+	//t_stack_node	*b;
 
 	a = NULL;
-	b = NULL;
+	//b = NULL;
+	flag_argv = 0;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
-	else if (argc == 2)
+	if (argc == 2)
+	{
 		argv = ft_split(argv[1], ' ');
-	write(1, "he llegado aqui\n", 15);
-	//init_stack(argv, a);
+		flag_argv = 1;
+	}
+	init_stack(argv, &a, flag_argv);
 	//while (stack a no este ordenado)
 	//	algoritmos de ordencion
 	//liberar los stack
