@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: agusheredia <agusheredia@student.42.fr>    +#+  +:+       +#+         #
+#    By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/06 14:39:27 by agheredi          #+#    #+#              #
-#    Updated: 2023/10/16 18:35:00 by agusheredia      ###   ########.fr        #
+#    Updated: 2023/10/18 15:27:01 by agheredi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,17 +30,17 @@ all: subsystems $(NAME)
 	$(CC) $(FLAGS) -c -o $@ $<
 
 subsystems:
-	@ make -C $(LIBFT_PATH) all
+	make -C $(LIBFT_PATH) all
 
 $(NAME): $(OBJECTS)
 	$(CC) $(FLAGS) $(OBJECTS) $(LIBFT_LIB) -o $(NAME)
 
 clean:
-	@ make -C $(LIBFT_PATH) clean
+	make -C $(LIBFT_PATH) clean
 	rm -f *.o
 
 fclean: clean
-	@ make -C $(LIBFT_PATH) fclean
+	make -C $(LIBFT_PATH) fclean
 	rm -f $(NAME)
 
 re: fclean all

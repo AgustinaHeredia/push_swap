@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agusheredia <agusheredia@student.42.fr>    +#+  +:+       +#+        */
+/*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:39:10 by agheredi          #+#    #+#             */
-/*   Updated: 2023/10/17 11:51:47 by agusheredia      ###   ########.fr       */
+/*   Updated: 2023/10/18 12:51:20 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ typedef struct s_stack_node
 }	t_stack_node;
 
 void			init_stack(char **argv, t_stack_node **a, int flag_argv);
-int				check_is_nbr(char *argv);
-long long		ft_atol(const char *str);
+int				check_char(char *argv);
 int				check_no_duplicate(t_stack_node *a, int nbr);
+long long		ft_atol(const char *str);
 void			ft_exit(int flag_argv, char **argv);
 void			free_argv(char **argv);
 t_stack_node	*ft_stacknew(int nb, int flag_argv, char **argv);

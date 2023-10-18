@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agusheredia <agusheredia@student.42.fr>    +#+  +:+       +#+        */
+/*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:49:12 by agheredi          #+#    #+#             */
-/*   Updated: 2023/10/17 22:52:23 by agusheredia      ###   ########.fr       */
+/*   Updated: 2023/10/18 14:12:01 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ static size_t	ft_wordcount(char *s, char sep)
 		}
 		i++;
 	}
-	if (separator_found == 0)
-		count++;
 	return (count);
 }
 
@@ -53,9 +51,10 @@ static char	**ft_write_split(char **lstword, char const *s, char sep)
 	size_t			lenword;
 	unsigned int	i;
 
-	i = 0;
+	i = 1;
 	words = ft_wordcount((char *) s, sep);
-	while (i < words)
+	lstword[0] = ft_calloc(1, 1);
+	while (i <= words)
 	{
 		while (*s && *s == sep)
 			s++;
@@ -86,7 +85,6 @@ char	**ft_split(char const *s, char c)
 	lstwords = (char **) malloc(sizeof(char *) * (words + 2));
 	if (!lstwords)
 		return (NULL);
-	lstwords[0] = ft_substr(s, 0, 1);
 	lstwords = ft_write_split(lstwords + 1, s, c);
 	return (lstwords);
 }
