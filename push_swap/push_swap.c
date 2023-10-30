@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:38:48 by agheredi          #+#    #+#             */
-/*   Updated: 2023/10/18 14:48:15 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:47:09 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,12 @@ int	main(int argc, char **argv)
 		flag_argv = 1;
 	}
 	init_stack(argv, &a, flag_argv);
-	//while (stack a no este ordenado)
+	if (stack_sorted(&a) == 1)
+	{
+		printf("hay que ordenar\n");
+	}
+	else
+		printf("NO hay que ordenar\n");
 	//	algoritmos de ordencion
 	//liberar los stack
 	return (0);

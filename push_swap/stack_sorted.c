@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   stack_sorted.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 12:45:16 by agheredi          #+#    #+#             */
-/*   Updated: 2023/10/25 11:36:31 by agheredi         ###   ########.fr       */
+/*   Created: 2023/10/30 17:37:45 by agheredi          #+#    #+#             */
+/*   Updated: 2023/10/30 17:56:03 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long long	ft_atol(const char *str)
+int	stack_sorted(t_stack_node **a)
 {
-	long long	i;
-	long long	nbr;
-	int			flag;
+	t_stack_node	*current;
 
-	i = 0;
-	nbr = 0;
-	flag = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
-		i++;
-	if (str[i] == '-')
-		flag = -1;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	current = *a;
+	while (current != NULL && current->next != NULL)
 	{
-		nbr = (str[i] - '0') + nbr * 10;
-		i++;
+		if (current->value > (current->next)->value)
+			return (1);
+		current = current->next;
 	}
-	if (flag == -1)
-		nbr = nbr * flag;
-	return (nbr);
+	return (0);
 }

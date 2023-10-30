@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:49:12 by agheredi          #+#    #+#             */
-/*   Updated: 2023/10/18 14:12:01 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/10/25 11:26:42 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,6 @@ char	**ft_split(char const *s, char c)
 	lstwords = (char **) malloc(sizeof(char *) * (words + 2));
 	if (!lstwords)
 		return (NULL);
-	lstwords = ft_write_split(lstwords + 1, s, c);
+	lstwords = ft_write_split(lstwords, s, c);
 	return (lstwords);
 }
