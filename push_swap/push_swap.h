@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:39:10 by agheredi          #+#    #+#             */
-/*   Updated: 2023/10/30 17:44:40 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:25:11 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,8 @@ void			add_nb_stack(t_stack_node **a, int nbr,
 int				stack_index(t_stack_node **a);
 void			ft_stackadd_back(t_stack_node **stack, t_stack_node *new);
 int				stack_sorted(t_stack_node **a);
+void			swap_comand_a(t_stack_node **a);
+void			swap_comand_b(t_stack_node **b);
+void			swap_comand_ab(t_stack_node **a, t_stack_node **b);
 
 #endif

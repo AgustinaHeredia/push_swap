@@ -6,7 +6,7 @@
 #    By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/06 14:39:27 by agheredi          #+#    #+#              #
-#    Updated: 2023/10/30 17:45:43 by agheredi         ###   ########.fr        #
+#    Updated: 2023/10/31 13:23:25 by agheredi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ SRC = push_swap.c \
 	utils_list.c \
 	exit.c \
 	stack_sorted.c \
+	swap.c \
+	push.c \
 
 CC = gcc
 LIBFT_PATH = libft/

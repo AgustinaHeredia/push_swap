@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:36:22 by agheredi          #+#    #+#             */
-/*   Updated: 2023/10/30 17:23:22 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:52:20 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	add_nb_stack(t_stack_node **a, int nbr, int flag_argv, char **argv)
 		*a = node;
 	else
 		ft_stackadd_back(a, node);
-	printf("stack size  es igual a %d\n", stack_index(a));
 }
 
 int	stack_index(t_stack_node **a)
@@ -60,7 +59,6 @@ void	ft_stackadd_back(t_stack_node **stack, t_stack_node *new)
 	t_stack_node	*temp;
 	t_stack_node	*original;
 
-	printf("Cuando entra stack size  es igual a %d\n", stack_index(stack));
 	original = *stack;
 	temp = original;
 	if (!original)

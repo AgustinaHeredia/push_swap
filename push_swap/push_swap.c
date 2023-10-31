@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:38:48 by agheredi          #+#    #+#             */
-/*   Updated: 2023/10/30 17:47:09 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/10/31 15:55:50 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ int	main(int argc, char **argv)
 		printf("NO hay que ordenar\n");
 	//	algoritmos de ordencion
 	//liberar los stack
-	return (0);
+	exit (EXIT_SUCCESS);
 }
