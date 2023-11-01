@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agusheredia <agusheredia@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:39:10 by agheredi          #+#    #+#             */
-/*   Updated: 2023/10/31 13:25:11 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/02 00:20:03 by agusheredia      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,12 @@ void			add_nb_stack(t_stack_node **a, int nbr,
 int				stack_index(t_stack_node **a);
 void			ft_stackadd_back(t_stack_node **stack, t_stack_node *new);
 int				stack_sorted(t_stack_node **a);
-void			swap_comand_a(t_stack_node **a);
-void			swap_comand_b(t_stack_node **b);
-void			swap_comand_ab(t_stack_node **a, t_stack_node **b);
+static void		swap_command(t_stack_node **stack);
+static void		swap_comand_ab(t_stack_node **a, t_stack_node **b);
+static void		rotate_comand(t_stack_node **stack);
+static void		rotate_comand_rr(t_stack_node **a, t_stack_node **b);
+static void		reverse_rotate(t_stack_node **stack);
+static void		reverse_rotate_rr(t_stack_node **a, t_stack_node **b);
+static void		push_command(t_stack_node **stack_dest, t_stack_node **src);
 
 #endif

@@ -3,31 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   reverse.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agusheredia <agusheredia@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 13:41:11 by agheredi          #+#    #+#             */
-/*   Updated: 2023/10/31 14:34:44 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/02 00:01:18 by agusheredia      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate(t_stack_node **stack)
+static void	reverse_rotate(t_stack_node **stack)
 {
-	t_stack_node	*temp;
+	t_stack_node	*last;
 
-	temp = last_stack_node(*stack);
-	if (stack_index(stack) <= 1)
+	if (stack_index(*stack) == 1 || stack == NULL || *stack == NULL)
 		return ;
-	else
-	{
-		while (last_stack_node(*stack) != NULL)
-			(*stack) = (*stack)->prev;
-		(*stack)->prev = temp;
-	}
+	last = last_stack_node(*stack);
+	last->prev->next = NULL;
+	last->next = *stack;
+	last->prev = NULL;
+	*stack = last;
+	last->next->prev = last;
 }
 
-void	reverse_rotate_rr(t_stack_node **a, t_stack_node **b)
+static void	reverse_rotate_rr(t_stack_node **a, t_stack_node **b)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);

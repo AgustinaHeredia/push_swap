@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agusheredia <agusheredia@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:27:05 by agheredi          #+#    #+#             */
-/*   Updated: 2023/10/18 10:06:51 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/01 12:17:47 by agusheredia      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,19 @@ void	free_argv(char **argv)
 		i++;
 	}
 	free(argv);
+}
+
+void	deallocate_stack(t_stack_node **stack)
+{
+	t_stack_node	*current;
+	t_stack_node	*aux;
+
+	current = *stack;
+	while (current != NULL)
+	{
+		aux = current;
+		current = current->next;
+		free(aux);
+	}
+	free(*stack);
 }
