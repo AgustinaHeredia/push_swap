@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   reverse.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agusheredia <agusheredia@student.42.fr>    +#+  +:+       +#+        */
+/*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 13:41:11 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/02 00:01:18 by agusheredia      ###   ########.fr       */
+/*   Updated: 2023/11/02 16:03:58 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	reverse_rotate(t_stack_node **stack)
+void	reverse_rotate(t_stack_node **stack)
 {
 	t_stack_node	*last;
 
-	if (stack_index(*stack) == 1 || stack == NULL || *stack == NULL)
+	if (stack_len(stack) == 1 || stack == NULL || *stack == NULL)
 		return ;
 	last = last_stack_node(*stack);
 	last->prev->next = NULL;
@@ -26,7 +26,21 @@ static void	reverse_rotate(t_stack_node **stack)
 	last->next->prev = last;
 }
 
-static void	reverse_rotate_rr(t_stack_node **a, t_stack_node **b)
+void	reverse_rra(t_stack_node **a, bool check)
+{
+	reverse_rotate(a);
+	if (check != false)
+		write(1, "rra\n", 4);
+}
+
+void	reverse_rrb(t_stack_node **b, bool check)
+{
+	reverse_rotate(b);
+	if (check != false)
+		write(1, "rrb\n", 4);
+}
+
+void	reverse_rotate_rr(t_stack_node **a, t_stack_node **b)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_stack_node.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agusheredia <agusheredia@student.42.fr>    +#+  +:+       +#+        */
+/*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:23:24 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/01 13:11:13 by agusheredia      ###   ########.fr       */
+/*   Updated: 2023/11/02 10:42:44 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
