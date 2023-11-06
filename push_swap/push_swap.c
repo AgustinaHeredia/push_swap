@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:38:48 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/02 16:20:35 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/06 14:23:43 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(int argc, char **argv)
 		flag_argv = 1;
 	}
 	init_stack(argv, &a, flag_argv);
+	iteri_index(&a);
 	if (stack_sorted(&a) == 1)
 		order_stack(&a, &b);
 	//deallocate_stack(&a);

@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:39:10 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/02 16:10:54 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/06 14:24:33 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,11 @@ void			reverse_rotate_rr(t_stack_node **a, t_stack_node **b);
 void			push_command(t_stack_node **stack_dest, t_stack_node **src);
 void			push_pa(t_stack_node **a, t_stack_node **b, bool check);
 void			push_pb(t_stack_node **b, t_stack_node **a, bool check);
-void			tri_node(t_stack_node **stack);
 void			order_stack(t_stack_node **a, t_stack_node **b);
+t_stack_node	*big_value(t_stack_node **stack);
+void			three_node(t_stack_node **a);
 void			five_sort(t_stack_node **a, t_stack_node **b);
+void			iteri_index(t_stack_node **a);
+int				index_node(t_stack_node **stack, int nbr_value);
 
 #endif

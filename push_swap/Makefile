@@ -6,7 +6,7 @@
 #    By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/06 14:39:27 by agheredi          #+#    #+#              #
-#    Updated: 2023/11/02 16:11:53 by agheredi         ###   ########.fr        #
+#    Updated: 2023/11/06 11:34:00 by agheredi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,7 @@ SRC = push_swap.c \
 	reverse.c \
 	rotate.c \
 	utils_stack_node.c \
-	tri_node.c \
-	five_node.c \
+	few_node.c \
 
 CC = gcc
 LIBFT_PATH = libft/
@@ -40,7 +39,7 @@ all: subsystems $(NAME)
 subsystems:
 	make -C $(LIBFT_PATH) all
 
-$(NAME): $(OBJECTS)
+$(NAME): $(OBJECTS) Makefile
 	$(CC) $(FLAGS) $(OBJECTS) $(LIBFT_LIB) -o $(NAME)
 
 clean:

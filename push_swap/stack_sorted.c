@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 17:37:45 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/02 15:39:55 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/06 14:41:08 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	stack_sorted(t_stack_node **a)
 	current = *a;
 	while (current != NULL && current->next != NULL)
 	{
-		if (current->value > (current->next)->value)
+		if (current->index > (current->next)->index)
 			return (1);
 		current = current->next;
 	}
@@ -29,7 +29,7 @@ int	stack_sorted(t_stack_node **a)
 void	order_stack(t_stack_node **a, t_stack_node **b)
 {
 	if (stack_len(a) == 3)
-		tri_node(a);
+		three_node(a);
 	else if (stack_len(a) <= 5)
 		five_sort(a, b);
 }
