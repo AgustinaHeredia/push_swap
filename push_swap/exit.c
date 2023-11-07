@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:27:05 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/02 10:39:52 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/07 14:52:29 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,14 @@ void	deallocate_stack(t_stack_node **stack)
 	t_stack_node	*current;
 	t_stack_node	*aux;
 
+	if (stack == NULL)
+		return ;
 	current = *stack;
 	while (current != NULL)
 	{
-		aux = current;
-		current = current->next;
-		free(aux);
+		aux = current->next;
+		free(current);
+		current = aux;
 	}
-	free(*stack);
+	*stack = NULL;
 }

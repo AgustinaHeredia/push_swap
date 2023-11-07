@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:23:24 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/06 14:25:08 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:59:34 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,16 @@ void	insert_beginning(t_stack_node **stack, int nbr)
 int	index_node(t_stack_node **stack, int nbr_value)
 {
 	int	index;
-	
-	index = 0;
+
+	printf("estoy dentro de index_node\n");
 	if (!stack)
 		return (-1);
-	while (*stack)
+	index = 0;
+	printf("%p\n", *stack);
+	while (*stack != NULL)
 	{
+		printf("Value: %d\n", nbr_value);
+		printf("Value Stack: %d\n", (*stack)->value);
 		if (nbr_value > (*stack)->value)
 			index++;
 		*stack = (*stack)->next;

@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:38:48 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/06 14:23:43 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/07 14:58:16 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	main(int argc, char **argv)
 		return (1);
 	if (argc == 2)
 	{
-		printf("%s\n", argv[1]);
 		argv = ft_split(argv[1], ' ');
 		flag_argv = 1;
 	}
@@ -33,6 +32,6 @@ int	main(int argc, char **argv)
 	iteri_index(&a);
 	if (stack_sorted(&a) == 1)
 		order_stack(&a, &b);
-	//deallocate_stack(&a);
+	deallocate_stack(&a);
 	exit (EXIT_SUCCESS);
 }
