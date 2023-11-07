@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:28:41 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/07 15:55:48 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/07 17:27:30 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ void	init_stack(char **argv, t_stack_node **a, int flag_argv)
 		add_nb_stack(a, (int)nbr, flag_argv, argv);
 		i++;
 	}
-	printf("estoy en init stack\n");
 	//if (flag_argv == 1)
 	//	free_argv(argv);
 }
@@ -77,13 +76,10 @@ void	iteri_index(t_stack_node **a)
 	current = (*a);
 	while (current != NULL)
 	{
-		printf("El value es: %d\n", current->value);
 		index = index_node(a, current->value);
-		printf("El Index es: %d\n", index);
 		if (index == -1)
 			return ;
 		current->index = index;
-		printf("El Index el stack es: %d\n", current->index);
 		current = current->next;
 	}
 }
