@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:28:41 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/07 17:27:30 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/08 11:16:50 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ void	init_stack(char **argv, t_stack_node **a, int flag_argv)
 		add_nb_stack(a, (int)nbr, flag_argv, argv);
 		i++;
 	}
-	//if (flag_argv == 1)
-	//	free_argv(argv);
+	if (flag_argv == 1)
+		free_argv(argv);
 }
 
 void	iteri_index(t_stack_node **a)

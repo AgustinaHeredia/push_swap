@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 13:41:11 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/02 16:03:58 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/08 14:58:48 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ void	reverse_rotate(t_stack_node **stack)
 void	reverse_rra(t_stack_node **a, bool check)
 {
 	reverse_rotate(a);
-	if (check != false)
+	if (check != true)
 		write(1, "rra\n", 4);
 }
 
 void	reverse_rrb(t_stack_node **b, bool check)
 {
 	reverse_rotate(b);
-	if (check != false)
+	if (check != true)
 		write(1, "rrb\n", 4);
 }
 
