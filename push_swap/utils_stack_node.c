@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:23:24 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/07 17:27:47 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/09 12:45:14 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,48 @@ int	index_node(t_stack_node **stack, int nbr_value)
 		current = current->next;
 	}
 	return (index);
+}
+
+t_stack_node	*big_value(t_stack_node **stack)
+{
+	t_stack_node	*big_node;
+	t_stack_node	*current;
+	int				big_nbr;
+
+	if (stack == NULL)
+		return (NULL);
+	current = *stack;
+	big_nbr = INT_MIN;
+	while (current)
+	{
+		if (current->value > big_nbr)
+		{
+			big_nbr = current->value;
+			big_node = current;
+		}
+		current = current->next;
+	}
+	return (big_node);
+}
+
+t_stack_node	*small_value(t_stack_node **stack)
+{
+	t_stack_node	*small_node;
+	t_stack_node	*current;
+	int				small_nbr;
+
+	if (stack == NULL)
+		return (NULL);
+	current = *stack;
+	small_nbr = INT_MAX;
+	while (current)
+	{
+		if (current->value < small_nbr)
+		{
+			small_nbr = current->value;
+			small_node = current;
+		}
+		current = current->next;
+	}
+	return (small_node);
 }
