@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:39:10 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/09 12:47:42 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/09 16:33:41 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,14 @@ typedef struct s_stack_node
 {
 	struct s_stack_node	*prev;
 	int					value;
+	int					current_position;
 	int					index;
+	int					push_price;
+	struct s_stack_node	*target_node;
 	struct s_stack_node	*next;
 }	t_stack_node;
 
-void			init_stack(char **argv, t_stack_node **a, int flag_argv);
+void			check_argv(char **argv, t_stack_node **a, int flag_argv);
 int				check_char(char *argv);
 int				check_no_duplicate(t_stack_node **a, int nbr);
 long long		ft_atol(const char *str);
@@ -57,6 +60,7 @@ void			push_command(t_stack_node **stack_dest, t_stack_node **src);
 void			push_pa(t_stack_node **a, t_stack_node **b, bool check);
 void			push_pb(t_stack_node **b, t_stack_node **a, bool check);
 void			order_stack(t_stack_node **a, t_stack_node **b);
+void			turk_sort(t_stack_node **a, t_stack_node **b);
 t_stack_node	*big_value(t_stack_node **stack);
 void			three_node(t_stack_node **a);
 void			four_sort(t_stack_node **a, t_stack_node **b);
@@ -64,5 +68,8 @@ void			five_sort(t_stack_node **a, t_stack_node **b);
 void			iteri_index(t_stack_node **a);
 int				index_node(t_stack_node **stack, int nbr_value);
 t_stack_node	*small_value(t_stack_node **stack);
+int				*big_nbr_value(t_stack_node **stack);
+int				*small_nbr_value(t_stack_node **stack);
+void			index_position(t_stack_node **stack);
 
 #endif

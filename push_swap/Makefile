@@ -6,7 +6,7 @@
 #    By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/06 14:39:27 by agheredi          #+#    #+#              #
-#    Updated: 2023/11/06 11:34:00 by agheredi         ###   ########.fr        #
+#    Updated: 2023/11/09 15:20:01 by agheredi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRC = push_swap.c \
 	rotate.c \
 	utils_stack_node.c \
 	few_node.c \
+	util_nbr_index.c \
 
 CC = gcc
 LIBFT_PATH = libft/

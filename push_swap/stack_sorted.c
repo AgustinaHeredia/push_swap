@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 17:37:45 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/09 13:12:49 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/09 16:23:13 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,13 @@ void	order_stack(t_stack_node **a, t_stack_node **b)
 		four_sort(a, b);
 	else if (len == 5)
 		five_sort(a, b);
+	else
+		turk_sort(a, b);
+}
+
+void	turk_sort(t_stack_node **a, t_stack_node **b)
+{
+	while (stack_len(a) > 3)
+		push_pb(b, a, false);
+	
 }

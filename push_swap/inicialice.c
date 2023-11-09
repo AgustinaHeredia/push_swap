@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:28:41 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/08 11:16:50 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/09 16:33:45 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	check_no_duplicate(t_stack_node **a, int nbr)
 	return (0);
 }
 
-void	init_stack(char **argv, t_stack_node **a, int flag_argv)
+void	check_argv(char **argv, t_stack_node **a, int flag_argv)
 {
 	long long	nbr;
 	int			i;
@@ -52,6 +52,8 @@ void	init_stack(char **argv, t_stack_node **a, int flag_argv)
 	while (argv[i] != 0)
 	{
 		if (check_char(argv[i]) == 1)
+			ft_exit(flag_argv, argv);
+		if (ft_strlen(argv[i]) > 14)
 			ft_exit(flag_argv, argv);
 		nbr = ft_atol(argv[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
