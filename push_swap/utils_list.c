@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:36:22 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/02 12:46:07 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/13 16:15:59 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ t_stack_node	*ft_stacknew(int nb, int flag_argv, char **argv)
 	if (!new)
 		ft_exit(flag_argv, argv);
 	new->value = nb;
-	new->index = 0;
 	new->prev = NULL;
 	new->next = NULL;
 	return (new);
@@ -72,5 +71,32 @@ void	ft_stackadd_back(t_stack_node **stack, t_stack_node *new)
 		new->prev = temp;
 		temp->next = new;
 	}
-	new->index = stack_len(stack);
+}
+
+void	set_target_nbr(t_stack_node **a, t_stack_node **b, int small)
+{
+	int				target_nbr;
+	t_stack_node	*current_a;
+	t_stack_node	*target_node;
+
+	target_nbr = INT_MAX;
+	while (*b)
+	{
+		current_a = *a;
+		while (current_a)
+		{
+			if ((*b)->value == small)
+			{
+				target_nbr = big_nbr_value(b);
+				current_a->target_node = *b;
+			}
+			else if (current_a->value > (*b)->value)
+			{
+				target_nbr = (*b)->value;
+				current_a->target_node = *b;
+			}
+			current_a = current_a->next;
+		}
+		*b = (*b)->next;
+	}
 }

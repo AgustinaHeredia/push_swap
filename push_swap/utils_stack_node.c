@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:23:24 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/09 12:45:14 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/13 12:30:32 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	insert_beginning(t_stack_node **stack, int nbr)
 	if (!new_node)
 		return ;
 	new_node->value = nbr;
-	new_node->index = 0;
 	new_node->prev = NULL;
 	new_node->next = *stack;
 	*stack = new_node;

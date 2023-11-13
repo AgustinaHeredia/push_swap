@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 17:37:45 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/09 16:23:13 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/13 16:47:06 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,17 @@ void	order_stack(t_stack_node **a, t_stack_node **b)
 
 void	turk_sort(t_stack_node **a, t_stack_node **b)
 {
+	int	small_value;
+
+	small_value = small_nbr_value(a);
+	push_pb(b, a, false);
+	push_pb(b, a, false);
 	while (stack_len(a) > 3)
-		push_pb(b, a, false);
-	
+	{
+		find_best_move(a, b);
+		//mover el precio mas barato hasta que haya 3
+	}
+	three_node(a);
+	//pasar todo del b al a
+	//verificar qque este ordenado si no rotar hasta que este ordenado
 }

@@ -6,19 +6,19 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 15:16:30 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/09 15:52:53 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/13 16:44:58 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*big_nbr_value(t_stack_node **stack)
+int	big_nbr_value(t_stack_node **stack)
 {
 	t_stack_node	*current;
 	int				big_nbr;
 
 	if (stack == NULL)
-		return (NULL);
+		return (0);
 	current = *stack;
 	big_nbr = INT_MIN;
 	while (current)
@@ -30,13 +30,13 @@ int	*big_nbr_value(t_stack_node **stack)
 	return (big_nbr);
 }
 
-int	*small_nbr_value(t_stack_node **stack)
+int	small_nbr_value(t_stack_node **stack)
 {
 	t_stack_node	*current;
 	int				small_nbr;
 
 	if (stack == NULL)
-		return (NULL);
+		return (0);
 	current = *stack;
 	small_nbr = INT_MAX;
 	while (current)
@@ -63,4 +63,12 @@ void	index_position(t_stack_node **stack)
 		temp = temp->next;
 		i++;
 	}
+}
+
+void	if_up_index(t_stack_node **stack)
+{
+	if (index_node < (stack_len(stack) / 2))
+		(*stack)->up_stack = true;
+	else
+		(*stack)->up_stack = false;
 }

@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:49:23 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/09 13:11:54 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/13 12:33:20 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	three_node(t_stack_node **a)
 		rotate_ra(a, false);
 	else if ((*a)->next == big_node)
 		reverse_rra(a, false);
-	if ((*a)->index > (*a)->next->index)
+	if ((*a)->value > (*a)->next->value)
 		swap_sa(a, false);
 }
 

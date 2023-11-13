@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   big_sorted.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 14:38:48 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/13 12:37:00 by agheredi         ###   ########.fr       */
+/*   Created: 2023/11/13 15:39:05 by agheredi          #+#    #+#             */
+/*   Updated: 2023/11/13 16:49:05 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+//conseguir los indices de todos y un booleano de por encima o por debajo
+void	find_best_move(t_stack_node **a, t_stack_node **b)
 {
-	int				flag_argv;
-	t_stack_node	*a;
-	t_stack_node	*b;
+	iteri_index(a);
+	iteri_index(b);
+	if_up_index(a);
+	if_up_index(b);
 
-	a = NULL;
-	b = NULL;
-	flag_argv = 0;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
-	if (argc == 2)
-	{
-		argv = ft_split(argv[1], ' ');
-		flag_argv = 1;
-	}
-	check_argv(argv, &a, flag_argv);
-	if (stack_sorted(&a) == 1)
-		order_stack(&a, &b);
-	deallocate_stack(&a);
-	exit (EXIT_SUCCESS);
+
+//funcion  de precio con los por encima y por debajo
+//buscar el mas barato (comparar los precio)
 }
