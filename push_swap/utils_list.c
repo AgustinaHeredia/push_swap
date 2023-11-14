@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:36:22 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/13 16:15:59 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/14 11:27:09 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,33 +70,5 @@ void	ft_stackadd_back(t_stack_node **stack, t_stack_node *new)
 		}
 		new->prev = temp;
 		temp->next = new;
-	}
-}
-
-void	set_target_nbr(t_stack_node **a, t_stack_node **b, int small)
-{
-	int				target_nbr;
-	t_stack_node	*current_a;
-	t_stack_node	*target_node;
-
-	target_nbr = INT_MAX;
-	while (*b)
-	{
-		current_a = *a;
-		while (current_a)
-		{
-			if ((*b)->value == small)
-			{
-				target_nbr = big_nbr_value(b);
-				current_a->target_node = *b;
-			}
-			else if (current_a->value > (*b)->value)
-			{
-				target_nbr = (*b)->value;
-				current_a->target_node = *b;
-			}
-			current_a = current_a->next;
-		}
-		*b = (*b)->next;
 	}
 }

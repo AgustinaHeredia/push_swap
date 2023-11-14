@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 15:16:30 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/13 16:44:58 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:13:47 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,24 +51,37 @@ int	small_nbr_value(t_stack_node **stack)
 void	index_position(t_stack_node **stack)
 {
 	int				i;
+	int				media_len;
 	t_stack_node	*temp;
 
 	temp = *stack;
 	if (!temp)
-		return (0);
+		return ;
 	i = 0;
+	media_len = stack_len(stack) / 2;
 	while (temp->next)
 	{
 		temp->current_position = i;
+		if (i < media_len)
+			(*stack)->up_stack = true;
+		else
+			(*stack)->up_stack = false;
 		temp = temp->next;
 		i++;
 	}
 }
 
-void	if_up_index(t_stack_node **stack)
+t_stack_node	*find_cheaper_node(t_stack_node **stack)
 {
-	if (index_node < (stack_len(stack) / 2))
-		(*stack)->up_stack = true;
-	else
-		(*stack)->up_stack = false;
+	t_stack_node	*cheaper_node;
+
+	if (!stack)
+		return (NULL);
+	while (*stack)
+	{
+		if ((*stack)->cheaper == true)
+			cheaper_node = *stack;
+		*stack = (*stack)->next;
+	}
+	return (cheaper_node);
 }

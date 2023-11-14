@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:39:10 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/13 16:42:06 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:11:20 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_stack_node
 	int					index;
 	int					push_price;
 	bool				up_stack;
+	bool				cheaper;
 	struct s_stack_node	*target_node;
 	struct s_stack_node	*next;
 }	t_stack_node;
@@ -69,7 +70,6 @@ void			add_nb_stack(t_stack_node **a, int nbr,
 					int flag_argv, char **argv);
 int				stack_len(t_stack_node **a);
 void			ft_stackadd_back(t_stack_node **stack, t_stack_node *new);
-void			set_target_nbr(t_stack_node **a, t_stack_node **b, int small);
 
 //comandos
 void			swap_command(t_stack_node **stack);
@@ -92,9 +92,25 @@ void			push_pb(t_stack_node **b, t_stack_node **a, bool check);
 int				big_nbr_value(t_stack_node **stack);
 int				small_nbr_value(t_stack_node **stack);
 void			index_position(t_stack_node **stack);
-void			if_up_index(t_stack_node **stack);
+t_stack_node	*find_cheaper_node(t_stack_node **stack);
 
 //big_sorted.c
-void			find_best_move(t_stack_node **a, t_stack_node **b);
+void			find_best_move_a(t_stack_node **a, t_stack_node **b, int small);
+void			cost_push(t_stack_node **a, t_stack_node **b);
+void			set_cheaper(t_stack_node **stack);
+void			move_a_to_b(t_stack_node **a, t_stack_node **b);
+void			last_order(t_stack_node **a);
+
+//move_comand.c
+void			rotate_move_rr(t_stack_node **a, t_stack_node **b);
+void			reverse_move_rrr(t_stack_node **a, t_stack_node **b);
+void			before_push(t_stack_node **stack,
+					t_stack_node *node_move, char stk);
+void			find_best_move_b(t_stack_node **a, t_stack_node **b);
+void			move_b_to_a(t_stack_node **a, t_stack_node **b);
+
+//target_ft.c
+void			set_target_node(t_stack_node **a, t_stack_node **b, int small);
+void			set_target_node_b(t_stack_node **a, t_stack_node **b);
 
 #endif

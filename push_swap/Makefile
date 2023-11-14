@@ -6,7 +6,7 @@
 #    By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/06 14:39:27 by agheredi          #+#    #+#              #
-#    Updated: 2023/11/13 15:39:31 by agheredi         ###   ########.fr        #
+#    Updated: 2023/11/14 16:25:00 by agheredi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,8 @@ SRC = push_swap.c \
 	few_node.c \
 	util_nbr_index.c \
 	big_sorted.c \
+	move_comand.c \
+	target_ft.c \
 
 CC = gcc
 LIBFT_PATH = libft/
