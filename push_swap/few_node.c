@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:49:23 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/13 12:33:20 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/15 14:17:01 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	three_node(t_stack_node **a)
 {
 	t_stack_node	*big_node;
 
-	big_node = big_value(a);
+	big_node = big_value(*a);
 	if (*a == big_node)
 		rotate_ra(a, false);
 	else if ((*a)->next == big_node)
@@ -29,7 +29,7 @@ void	four_sort(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*small_node;
 
-	small_node = small_value(a);
+	small_node = small_value(*a);
 	if (*a != small_node)
 	{
 		if ((*a)->next == small_node)
@@ -51,7 +51,7 @@ void	five_sort(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*small_node;
 
-	small_node = small_value(a);
+	small_node = small_value(*a);
 	if (*a != small_node)
 	{
 		if ((*a)->next == small_node)

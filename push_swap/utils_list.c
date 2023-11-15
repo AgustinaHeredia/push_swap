@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:36:22 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/14 11:27:09 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/15 13:54:24 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ void	add_nb_stack(t_stack_node **a, int nbr, int flag_argv, char **argv)
 		ft_stackadd_back(a, node);
 }
 
-int	stack_len(t_stack_node **a)
+int	stack_len(t_stack_node *a)
 {
 	int				i;
 	t_stack_node	*temp;
 
-	temp = *a;
+	temp = a;
 	if (!temp)
 		return (0);
 	i = 1;

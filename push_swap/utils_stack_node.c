@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:23:24 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/13 12:30:32 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/15 14:06:22 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	insert_beginning(t_stack_node **stack, int nbr)
 	*stack = new_node;
 }
 
-int	index_node(t_stack_node **stack, int nbr_value)
+int	index_node(t_stack_node *stack, int nbr_value)
 {
 	int				index;
 	t_stack_node	*current;
@@ -42,7 +42,7 @@ int	index_node(t_stack_node **stack, int nbr_value)
 	if (!stack)
 		return (-1);
 	index = 0;
-	current = *stack;
+	current = stack;
 	while (current != NULL)
 	{
 		if (nbr_value > current->value)
@@ -52,7 +52,7 @@ int	index_node(t_stack_node **stack, int nbr_value)
 	return (index);
 }
 
-t_stack_node	*big_value(t_stack_node **stack)
+t_stack_node	*big_value(t_stack_node *stack)
 {
 	t_stack_node	*big_node;
 	t_stack_node	*current;
@@ -60,7 +60,7 @@ t_stack_node	*big_value(t_stack_node **stack)
 
 	if (stack == NULL)
 		return (NULL);
-	current = *stack;
+	current = stack;
 	big_nbr = INT_MIN;
 	while (current)
 	{
@@ -74,7 +74,7 @@ t_stack_node	*big_value(t_stack_node **stack)
 	return (big_node);
 }
 
-t_stack_node	*small_value(t_stack_node **stack)
+t_stack_node	*small_value(t_stack_node *stack)
 {
 	t_stack_node	*small_node;
 	t_stack_node	*current;
@@ -82,7 +82,7 @@ t_stack_node	*small_value(t_stack_node **stack)
 
 	if (stack == NULL)
 		return (NULL);
-	current = *stack;
+	current = stack;
 	small_nbr = INT_MAX;
 	while (current)
 	{

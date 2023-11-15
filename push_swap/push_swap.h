@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:39:10 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/14 17:11:20 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/15 14:06:32 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ typedef struct s_stack_node
 //inicialice.c
 
 int				check_char(char *argv);
-int				check_no_duplicate(t_stack_node **a, int nbr);
+int				check_no_duplicate(t_stack_node *a, int nbr);
 void			check_argv(char **argv, t_stack_node **a, int flag_argv);
-void			iteri_index(t_stack_node **a);
+void			iteri_index(t_stack_node *a);
 
 //funcion para convertir un string en un long
 long long		ft_atol(const char *str);
@@ -48,7 +48,7 @@ void			free_argv(char **argv);
 void			deallocate_stack(t_stack_node **stack);
 
 // stack_sorted.c
-int				stack_sorted(t_stack_node **a);
+int				stack_sorted(t_stack_node *a);
 void			order_stack(t_stack_node **a, t_stack_node **b);
 void			turk_sort(t_stack_node **a, t_stack_node **b);
 
@@ -60,15 +60,15 @@ void			five_sort(t_stack_node **a, t_stack_node **b);
 //utils_stack_node.c
 t_stack_node	*last_stack_node(t_stack_node *stack);
 void			insert_beginning(t_stack_node **stack, int nbr);
-int				index_node(t_stack_node **stack, int nbr_value);
-t_stack_node	*big_value(t_stack_node **stack);
-t_stack_node	*small_value(t_stack_node **stack);
+int				index_node(t_stack_node *stack, int nbr_value);
+t_stack_node	*big_value(t_stack_node *stack);
+t_stack_node	*small_value(t_stack_node *stack);
 
 //utils_list.c
 t_stack_node	*ft_stacknew(int nb, int flag_argv, char **argv);
 void			add_nb_stack(t_stack_node **a, int nbr,
 					int flag_argv, char **argv);
-int				stack_len(t_stack_node **a);
+int				stack_len(t_stack_node *a);
 void			ft_stackadd_back(t_stack_node **stack, t_stack_node *new);
 
 //comandos
@@ -89,15 +89,15 @@ void			push_pa(t_stack_node **a, t_stack_node **b, bool check);
 void			push_pb(t_stack_node **b, t_stack_node **a, bool check);
 
 // util_nbr_index.c 
-int				big_nbr_value(t_stack_node **stack);
-int				small_nbr_value(t_stack_node **stack);
-void			index_position(t_stack_node **stack);
-t_stack_node	*find_cheaper_node(t_stack_node **stack);
+int				big_nbr_value(t_stack_node *stack);
+int				small_nbr_value(t_stack_node *stack);
+void			index_position(t_stack_node *stack);
+t_stack_node	*find_cheaper_node(t_stack_node *stack);
 
 //big_sorted.c
-void			find_best_move_a(t_stack_node **a, t_stack_node **b, int small);
-void			cost_push(t_stack_node **a, t_stack_node **b);
-void			set_cheaper(t_stack_node **stack);
+void			find_best_move_a(t_stack_node **a, t_stack_node **b);
+void			cost_push(t_stack_node *a, t_stack_node *b);
+void			set_cheaper(t_stack_node *stack);
 void			move_a_to_b(t_stack_node **a, t_stack_node **b);
 void			last_order(t_stack_node **a);
 
@@ -110,7 +110,7 @@ void			find_best_move_b(t_stack_node **a, t_stack_node **b);
 void			move_b_to_a(t_stack_node **a, t_stack_node **b);
 
 //target_ft.c
-void			set_target_node(t_stack_node **a, t_stack_node **b, int small);
-void			set_target_node_b(t_stack_node **a, t_stack_node **b);
+void			set_target_node(t_stack_node *a, t_stack_node *b);
+void			set_target_node_b(t_stack_node *a, t_stack_node *b);
 
 #endif

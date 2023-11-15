@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:44:16 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/08 14:58:56 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/15 14:13:27 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	swap_command(t_stack_node **stack)
 	t_stack_node	*temp;
 	int				len;
 
-	len = stack_len(stack);
+	len = stack_len(*stack);
 	if (len == 1 || stack == NULL || *stack == NULL || (*stack)->next == NULL)
 		return ;
 	temp = (*stack)->next;

@@ -6,20 +6,20 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 15:16:30 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/14 17:13:47 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/15 14:26:41 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	big_nbr_value(t_stack_node **stack)
+int	big_nbr_value(t_stack_node *stack)
 {
 	t_stack_node	*current;
 	int				big_nbr;
 
 	if (stack == NULL)
 		return (0);
-	current = *stack;
+	current = stack;
 	big_nbr = INT_MIN;
 	while (current)
 	{
@@ -30,14 +30,14 @@ int	big_nbr_value(t_stack_node **stack)
 	return (big_nbr);
 }
 
-int	small_nbr_value(t_stack_node **stack)
+int	small_nbr_value(t_stack_node *stack)
 {
 	t_stack_node	*current;
 	int				small_nbr;
 
 	if (stack == NULL)
 		return (0);
-	current = *stack;
+	current = stack;
 	small_nbr = INT_MAX;
 	while (current)
 	{
@@ -48,40 +48,41 @@ int	small_nbr_value(t_stack_node **stack)
 	return (small_nbr);
 }
 
-void	index_position(t_stack_node **stack)
+void	index_position(t_stack_node *stack)
 {
 	int				i;
 	int				media_len;
-	t_stack_node	*temp;
 
-	temp = *stack;
-	if (!temp)
-		return ;
 	i = 0;
 	media_len = stack_len(stack) / 2;
-	while (temp->next)
+	while (stack)
 	{
-		temp->current_position = i;
+		stack->current_position = i;
+		stack->cheaper = false;
 		if (i < media_len)
-			(*stack)->up_stack = true;
+		{
+			stack->up_stack = true;
+		}
 		else
-			(*stack)->up_stack = false;
-		temp = temp->next;
+		{
+			stack->up_stack = false;
+		}
+		stack = stack->next;
 		i++;
 	}
 }
 
-t_stack_node	*find_cheaper_node(t_stack_node **stack)
+t_stack_node	*find_cheaper_node(t_stack_node *stack)
 {
 	t_stack_node	*cheaper_node;
 
 	if (!stack)
 		return (NULL);
-	while (*stack)
+	while (stack)
 	{
-		if ((*stack)->cheaper == true)
-			cheaper_node = *stack;
-		*stack = (*stack)->next;
+		if (stack->cheaper == true)
+			cheaper_node = stack;
+		stack = stack->next;
 	}
 	return (cheaper_node);
 }

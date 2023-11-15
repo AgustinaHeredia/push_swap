@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 13:19:16 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/02 15:58:49 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:18:47 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	push_command(t_stack_node **stack_dest, t_stack_node **src)
 	{
 		*stack_dest = node_push;
 		node_push->prev = NULL;
+		node_push->next = NULL;
 	}
 	else
 	{

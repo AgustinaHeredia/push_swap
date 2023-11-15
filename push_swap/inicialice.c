@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:28:41 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/13 16:21:35 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/15 13:47:17 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ int	check_char(char *argv)
 	return (0);
 }
 
-int	check_no_duplicate(t_stack_node **a, int nbr)
+int	check_no_duplicate(t_stack_node *a, int nbr)
 {
 	t_stack_node	*current;
 
-	current = *a;
+	current = a;
 	while (current != NULL)
 	{
 		if (current->value == nbr)
@@ -58,7 +58,7 @@ void	check_argv(char **argv, t_stack_node **a, int flag_argv)
 		nbr = ft_atol(argv[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
 			ft_exit(flag_argv, argv);
-		flag = check_no_duplicate(a, (int)nbr);
+		flag = check_no_duplicate(*a, (int)nbr);
 		if (flag == 1)
 			ft_exit(flag_argv, argv);
 		add_nb_stack(a, (int)nbr, flag_argv, argv);
@@ -68,14 +68,14 @@ void	check_argv(char **argv, t_stack_node **a, int flag_argv)
 		free_argv(argv);
 }
 
-void	iteri_index(t_stack_node **a)
+void	iteri_index(t_stack_node *a)
 {
 	int				index;
 	t_stack_node	*current;
 
 	if (a == NULL)
 		return ;
-	current = (*a);
+	current = a;
 	while (current != NULL)
 	{
 		index = index_node(a, current->value);
