@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 15:16:30 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/15 14:26:41 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/16 13:32:04 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,14 @@ void	index_position(t_stack_node *stack)
 	int				media_len;
 
 	i = 0;
+	if (!stack)
+		return ;
 	media_len = stack_len(stack) / 2;
 	while (stack)
 	{
 		stack->current_position = i;
 		stack->cheaper = false;
-		if (i < media_len)
+		if (i <= media_len)
 		{
 			stack->up_stack = true;
 		}
@@ -74,15 +76,13 @@ void	index_position(t_stack_node *stack)
 
 t_stack_node	*find_cheaper_node(t_stack_node *stack)
 {
-	t_stack_node	*cheaper_node;
-
 	if (!stack)
 		return (NULL);
 	while (stack)
 	{
 		if (stack->cheaper == true)
-			cheaper_node = stack;
+			return (stack);
 		stack = stack->next;
 	}
-	return (cheaper_node);
+	return (NULL);
 }

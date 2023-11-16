@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:39:10 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/15 14:06:32 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/16 12:11:51 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,10 @@ void			move_a_to_b(t_stack_node **a, t_stack_node **b);
 void			last_order(t_stack_node **a);
 
 //move_comand.c
-void			rotate_move_rr(t_stack_node **a, t_stack_node **b);
-void			reverse_move_rrr(t_stack_node **a, t_stack_node **b);
+void			rotate_move_rr(t_stack_node **a, t_stack_node **b,
+					t_stack_node *cheaper);
+void			reverse_move_rrr(t_stack_node **a, t_stack_node **b,
+					t_stack_node *cheaper);
 void			before_push(t_stack_node **stack,
 					t_stack_node *node_move, char stk);
 void			find_best_move_b(t_stack_node **a, t_stack_node **b);

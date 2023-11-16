@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 15:39:05 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/15 14:26:04 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:18:04 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ void	cost_push(t_stack_node *a, t_stack_node *b)
 	{
 		a->push_price = a->current_position;
 		if (a->up_stack == false)
-			a->push_price = len_a - a->current_position;
+			a->push_price = len_a - (a->current_position);
 		if (a->target_node->up_stack == true)
 			a->push_price += a->target_node->current_position;
 		else
-			a->push_price += len_b - a->target_node->current_position;
+			a->push_price += len_b - (a->target_node->current_position);
 		a = a->next;
 	}
 }
@@ -44,11 +44,11 @@ void	cost_push(t_stack_node *a, t_stack_node *b)
 void	set_cheaper(t_stack_node *stack)
 {
 	t_stack_node	*cheaper_node;
-	int				cheaper_cost;
+	long			cheaper_cost;
 
-	cheaper_cost = INT_MAX;
 	if (!stack)
 		return ;
+	cheaper_cost = LONG_MAX;
 	while (stack)
 	{
 		if (stack->push_price < cheaper_cost)
@@ -67,23 +67,20 @@ void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 
 	cheaper = find_cheaper_node(*a);
 	if (cheaper->up_stack == true && cheaper->target_node->up_stack == true)
-		rotate_move_rr(a, b);
+		rotate_move_rr(a, b, cheaper);
 	else if (cheaper->up_stack == false
 		&& cheaper->target_node->up_stack == false)
-		reverse_move_rrr(a, b);
+		reverse_move_rrr(a, b, cheaper);
 	before_push(a, cheaper, 'a');
 	before_push(b, cheaper->target_node, 'b');
-	push_pb(b, a, false);
+	push_pb(b, a, true);
 }
 
 void	last_order(t_stack_node **a)
 {
-	t_stack_node	*small_node;
-
-	small_node = small_value(*a);
-	while (*a != small_node)
+	while ((*a)->value != small_value(*a)->value)
 	{
-		if (small_node->up_stack == true)
+		if (small_value(*a)->up_stack == true)
 			rotate_ra(a, false);
 		else
 			reverse_rra(a, false);

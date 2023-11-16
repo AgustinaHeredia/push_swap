@@ -6,7 +6,7 @@
 /*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 13:41:11 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/15 14:14:34 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:46:05 by agheredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	reverse_rotate(t_stack_node **stack)
 {
 	t_stack_node	*last;
 
-	if (stack_len(*stack) == 1 || stack == NULL || *stack == NULL)
+	if (stack_len(*stack) == 1 || *stack == NULL)
 		return ;
 	last = last_stack_node(*stack);
 	last->prev->next = NULL;
