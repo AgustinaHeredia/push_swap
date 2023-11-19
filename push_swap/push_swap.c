@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agusheredia <agusheredia@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:38:48 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/16 17:05:45 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/19 19:15:53 by agusheredia      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,6 @@ int	main(int argc, char **argv)
 	check_argv(argv, &a, flag_argv);
 	if (stack_sorted(a) == 1)
 		order_stack(&a, &b);
-	/*while (a)
-	{
-		printf("%d\n", a->value);
-		a = a->next;
-	}*/
 	deallocate_stack(&a);
 	exit (EXIT_SUCCESS);
 }

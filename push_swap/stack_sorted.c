@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_sorted.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agheredi <agheredi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agusheredia <agusheredia@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 17:37:45 by agheredi          #+#    #+#             */
-/*   Updated: 2023/11/16 16:57:20 by agheredi         ###   ########.fr       */
+/*   Updated: 2023/11/19 19:16:16 by agusheredia      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ void	turk_sort(t_stack_node **a, t_stack_node **b)
 	int	len_a;
 
 	len_a = stack_len(*a);
-	if (len_a > 3 && stack_sorted(*a) == 1)
+	if (len_a-- > 3 && stack_sorted(*a) == 1)
 		push_pb(b, a, true);
 	if (len_a-- > 3 && stack_sorted(*a) == 1)
 		push_pb(b, a, true);
-	while (len_a-- > 3 && stack_sorted(*a) == 1)
+	while (len_a-- > 3)
 	{
 		find_best_move_a(a, b);
 		move_a_to_b(a, b);
